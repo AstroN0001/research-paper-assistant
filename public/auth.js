@@ -6,18 +6,43 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Apply Theme
-    const savedTheme = localStorage.getItem('pm_theme');
+    let savedTheme = localStorage.getItem('pm_theme');
+    if (!savedTheme) {
+        savedTheme = 'light';
+        localStorage.setItem('pm_theme', 'light');
+    }
     if (savedTheme === 'light') {
         document.documentElement.setAttribute('data-theme', 'light');
-    } else if (savedTheme === 'dark') {
+    } else {
         document.documentElement.removeAttribute('data-theme');
-    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-        document.documentElement.setAttribute('data-theme', 'light');
     }
 
     const $ = id => document.getElementById(id);
 
     // Elements
+    const themeBtn = $('themeToggleBtn');
+    const sunIcon = themeBtn.querySelector('.sun-icon');
+    const moonIcon = themeBtn.querySelector('.moon-icon');
+
+    // Setup Theme Icons
+    sunIcon.style.display = savedTheme === 'light' ? 'none' : 'block';
+    moonIcon.style.display = savedTheme === 'light' ? 'block' : 'none';
+
+    // Theme Toggle Handler
+    themeBtn.addEventListener('click', () => {
+        const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+        if (isLight) {
+            document.documentElement.removeAttribute('data-theme');
+            localStorage.setItem('pm_theme', 'dark');
+            sunIcon.style.display = 'block';
+            moonIcon.style.display = 'none';
+        } else {
+            document.documentElement.setAttribute('data-theme', 'light');
+            localStorage.setItem('pm_theme', 'light');
+            sunIcon.style.display = 'none';
+            moonIcon.style.display = 'block';
+        }
+    });
     const loginTab = $('loginTab'), signupTab = $('signupTab');
     const loginForm = $('loginForm'), signupForm = $('signupForm');
     const loginError = $('loginError'), signupError = $('signupError');

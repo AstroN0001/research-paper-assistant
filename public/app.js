@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
         moonIcon.style.display = isLight ? 'block' : 'none';
         localStorage.setItem('pm_theme', theme);
     }
-    setTheme(localStorage.getItem('pm_theme') || (window.matchMedia?.('(prefers-color-scheme: light)').matches ? 'light' : 'dark'));
+    setTheme(localStorage.getItem('pm_theme') || 'light');
     themeBtn.addEventListener('click', () => setTheme(document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light'));
 
     // ---- Logout ----
