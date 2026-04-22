@@ -1,7 +1,14 @@
 {
   "name": "research-paper-assistant",
-  "version": "1.0.0",
-  "description": "Research Paper Assistant with Langchain.js and Gemini",
+  "version": "2.0.0",
+  "description": "AI-powered RAG application for uploading research papers and having intelligent, cited conversations about their content. Built with LangChain.js, Google Gemini embeddings, and Groq Llama 3.3.",
+  "author": "Arpit Chauhan <arpit@nitkkr.ac.in>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AstroN0001/research-paper-assistant"
+  },
+  "keywords": ["rag", "langchain", "gemini", "research-papers", "ai-assistant", "vector-search", "groq", "llama"],
   "main": "server.js",
   "type": "module",
   "scripts": {
