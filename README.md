@@ -192,10 +192,4 @@ This app is deployed on **Render** as a Web Service.
 
 ## 📄 License
 
-This project is built as part of the coursework at **NIT Kurukshetra** — Scripting Language Lab (Semester IV).
-
----
-
-<p align="center">
-  Built with ❤️ by <a href="https://github.com/AstroN0001">Arpit Chauhan</a> — NIT Kurukshetra
-</p>
+This project is licensed under the [MIT License](LICENSE).
