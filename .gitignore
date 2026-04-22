@@ -1,0 +1,12 @@
+node_modules/
+.env
+uploads/*
+!uploads/.gitkeep
+data/vectors/*
+data/history/*
+data/notebooks/*
+data/users.json
+!data/vectors/.gitkeep
+!data/history/.gitkeep
+!data/notebooks/.gitkeep
+.DS_Store
